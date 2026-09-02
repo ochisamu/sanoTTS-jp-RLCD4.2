@@ -1,0 +1,36 @@
+# ESP-IDF generated files
+firmware/build*/
+firmware/managed_components/
+firmware/sdkconfig
+firmware/sdkconfig.old
+
+# Downloaded model/dictionary assets (separate upstream license)
+assets/*.bin
+assets/*.txt
+!assets/.gitkeep
+
+# Never commit generated firmware, model payloads, audio, or debug images.
+# The release assets are fetched explicitly and verified by tools/demo.py.
+*.bin
+*.elf
+*.map
+*.uf2
+*.pcm
+*.wav
+*.dump
+*.log
+
+# Locally merged firmware and device backups
+dist/
+backups/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

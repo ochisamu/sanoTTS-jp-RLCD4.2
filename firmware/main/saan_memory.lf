@@ -1,0 +1,12 @@
+# Keep the synthesis arena and PCM chunk in internal SRAM.  The token-ID array
+# is read at a much lower rate and is safe in octal PSRAM; moving only this
+# named symbol preserves the pinned upstream sources and leaves useful DIRAM
+# headroom in the kanji profile.
+[scheme:saan_token_ids_ext]
+entries:
+    bss -> extern_ram
+
+[mapping:saan_token_ids_ext]
+archive: libmain.a
+entries:
+    main:g_ids (saan_token_ids_ext)

@@ -1,0 +1,7 @@
+# Waveshare ESP32-S3-RLCD-4.2 16 MB kanji experiment. No OTA/filesystem.
+# Name,   Type, SubType, Offset,   Size,     Flags
+nvs,      data, nvs,     0x9000,   0x6000,
+phy_init, data, phy,     0xf000,   0x1000,
+factory,  app,  factory, 0x10000,  0x200000,
+model,    data, 0x40,    0x210000, 0x0C0000,
+dict,     data, 0x41,    0x2D0000, 0xD30000,
