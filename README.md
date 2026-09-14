@@ -24,8 +24,8 @@ factory image、シリアルログ、Wi-Fi情報はこのリポジトリとGit�
 
 | 取得物 | 外部リリース | size | SHA-256 |
 |---|---|---:|---|
-| `saanotts-jp-v3-int8.bin` | sanoTTS-jp `v0.2.0` | 643,936 | `c3b89216133fa7bee3f61ed9d8e6c7183a5dfd41b70dab194f42c20fce5b4170` |
-| `k1-dict-438750.bin` | sanoTTS-jp `v0.2.0` | 13,702,320 | `f162c922074d76817298b34d8a8fd35f7d195f38540303485a76c956b5d84877` |
+| `saanotts-jp-v4-int8.bin` | sanoTTS-jp `v1.0.0` | 654,032 | `a1eb6b0812e2ad2a228836088a3e34160cb66731492fb957a5891605db2fa1b6` |
+| `k1-dict-438750.bin` | sanoTTS-jp `v1.0.0` | 13,702,320 | `f162c922074d76817298b34d8a8fd35f7d195f38540303485a76c956b5d84877` |
 
 取得物はGit除外された`assets/`へ置かれます。ビルド成果物も`dist/`と`firmware/build*/`に
 隔離され、Gitには入りません。PCはUTF-8文章を送るだけで、かな中間表現への変換とPCM生成は
@@ -54,6 +54,13 @@ ESP32-S3上で実行します。
 （GPIO18）はボードプローブで押下確認に使います。TTSプロファイルでは、起動後の新しい
 押下とデバウンス済み解放により固定デモ文を1回だけ実行します。任意の文章入力は
 USBシリアルから行います。
+
+現在の対応版は sanoTTS-jp **v1.0.0**（v4 int8モデル）です。更新時は
+`git pull --ff-only` → `git submodule update --init --recursive` →
+`python3 tools/demo.py fetch --kanji --accept-model-license` → 再ビルドの順で進めてください。
+v3モデルは新ファームに使用できません。ファームとv4モデルをセットで書き込みます。
+これまでの実機記録は旧版の結果です。v1.0.0対応版の実機での音質・電池動作は未確認です。
+変更点・更新手順・検証結果は [v1.0対応メモ](docs/v1-upgrade.md) にまとめています。
 
 ## 重要：sanoTTSの汎用binは書き込まない
 
@@ -153,15 +160,14 @@ python3 tools/demo.py flash --port PORT --profile kana --silent --confirm-board 
 python3 tools/demo.py demo --port PORT --profile kana --silent --confirm-board ESP32-S3-RLCD-4.2
 ```
 
-上流既定速度1.0倍での基準文「今日は良い天気ですね。」は27136 samples、参照QEMUの
-FNV-1aは`0x04de91103a0e49f9`です。本デモは実機調整で音素durationを1.15倍するため、
-samplesとFNVはこの上流アンカーから変化します。Xtensaのfloat丸めも考慮し、samples、
-absmax、sumsq、クリップ数、再起動の有無をまとめて記録します。
+v4モデルでは旧v3の27136 samples／FNV値は基準に使えません。
+本デモは音素durationを1.15倍します。実機検証ではsamples、FNV、absmax、sumsq、
+クリップ数、再起動の有無をまとめて記録してください。
 
 ### 4. 音声デモ
 
 電源を切り、付属スピーカーをコネクターへ奥まで差し込み、再度USB-Cだけで起動します。
-付属スピーカーでは公式factoryの既定値と同じ音量100で再生します。基準TTSのPCMピークは
+付属スピーカーでは公式factoryの既定値と同じ音量100で再生します。旧版実機での基準TTSのPCMピークは
 約-10.5 dBFS、クリップ0で、公式factoryの音楽経路は音量90です。
 聞き取りやすさのため、音素durationを1.15倍して声の高さを維持したまま少し遅くします。
 PCMは実機で歪みが出たため増幅せず1.0倍とし、飽和制限とクリップ数計測を残します。

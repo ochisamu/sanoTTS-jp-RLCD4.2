@@ -30,7 +30,7 @@ ASSETS = ROOT / "assets"
 DIST = ROOT / "dist"
 FLASH_BYTES = 16 * 1024 * 1024
 MIN_DIRAM_REMAIN = 8 * 1024
-UPSTREAM_COMMIT = "8f76437fe82604b3d77dc6a5ddbd0e4f557a750d"
+UPSTREAM_COMMIT = "f427b1e6bf743965c9b033d43fdf84b56f8f7543"
 BOARD_ID = "ESP32-S3-RLCD-4.2"
 BOARD_NAME = "Waveshare ESP32-S3-RLCD-4.2"
 MANIFEST_SCHEMA = 3
@@ -71,14 +71,14 @@ BACKUPS = default_backup_dir()
 
 ASSET_SPECS = {
     "model": {
-        "name": "saanotts-jp-v3-int8.bin",
-        "url": "https://github.com/ayutaz/sanoTTS-jp/releases/download/v0.2.0/saanotts-jp-v3-int8.bin",
-        "size": 643_936,
-        "sha256": "c3b89216133fa7bee3f61ed9d8e6c7183a5dfd41b70dab194f42c20fce5b4170",
+        "name": "saanotts-jp-v4-int8.bin",
+        "url": "https://github.com/ayutaz/sanoTTS-jp/releases/download/v1.0.0/saanotts-jp-v4-int8.bin",
+        "size": 654_032,
+        "sha256": "a1eb6b0812e2ad2a228836088a3e34160cb66731492fb957a5891605db2fa1b6",
     },
     "dict": {
         "name": "k1-dict-438750.bin",
-        "url": "https://github.com/ayutaz/sanoTTS-jp/releases/download/v0.2.0/k1-dict-438750.bin",
+        "url": "https://github.com/ayutaz/sanoTTS-jp/releases/download/v1.0.0/k1-dict-438750.bin",
         "size": 13_702_320,
         "sha256": "f162c922074d76817298b34d8a8fd35f7d195f38540303485a76c956b5d84877",
     },
@@ -87,6 +87,9 @@ ASSET_SPECS = {
 DIST_NOTICE_FILES = {
     ROOT / "LICENSE": "LICENSE-MIT.txt",
     ROOT / "NOTICE.md": "NOTICE.md",
+    ROOT / "licenses/sanoTTS-jp-code-MIT.txt": "LICENSE-SANOTTS-MIT.txt",
+    ROOT / "licenses/sanoTTS-jp-NOTICE.txt": "NOTICE.txt",
+    ROOT / "licenses/sanoTTS-jp-Apache-2.0.txt": "LICENSE-APACHE-2.0.txt",
     ROOT / "licenses/sanoTTS-jp-model.md": "LICENSE-MODEL.md",
     ROOT / "licenses/sanoTTS-jp-model-card.md": "MODEL_CARD.md",
     ROOT / "licenses/waveshare-examples-Apache-2.0.txt": "LICENSE-WAVESHARE-APACHE-2.0.txt",
@@ -426,7 +429,7 @@ def cmd_check(_: argparse.Namespace) -> None:
         "console": (console_source, (
             "RLCD42_KEY_GPIO       GPIO_NUM_18",
             "KEY_DEBOUNCE_SAMPLES  3",
-            "pdMS_TO_TICKS(KEY_POLL_MS)",
+            "saan_console_poll", "SAAN_CONSOLE_PENDING",
             "pdMS_TO_TICKS(5)",
             "s_key_seen_released = s_key_stable != 0",
             "!s_line.done &&",
@@ -443,8 +446,8 @@ def cmd_check(_: argparse.Namespace) -> None:
             "main:g_ids (saan_token_ids_ext)", "bss -> extern_ram",
         )),
         "notice": (notice, (
-            "This model was distilled from a piper-plus teacher model.",
-            "つくよみちゃんコーパス", "Pinned reference revision: `eb1f6342",
+            "licenses/sanoTTS-jp-NOTICE.txt", "licenses/sanoTTS-jp-Apache-2.0.txt",
+            "Pinned reference revision: `eb1f6342",
         )),
     }
     for section, (source, tokens) in expected_tokens.items():
@@ -459,7 +462,7 @@ def cmd_check(_: argparse.Namespace) -> None:
         raise DemoError("TTS builds must use the RLCD4.2 USB/KEY console adapter")
     if "saan_stream_pull=rlcd42_saan_stream_pull" not in cmake_source:
         raise DemoError("upstream stream failures must propagate into the verified result marker")
-    if "SAAN_I2S_PREROLL_SAMPLES=262144" not in cmake_source:
+    if "SAAN_AUDIO_PREROLL_SAMPLES=262144" not in cmake_source:
         raise DemoError("RLCD4.2 must buffer short utterances before playback")
     if "CONFIG_SPIRAM_MODE_OCT=y" not in sdkconfig or "CONFIG_SPIRAM_MODE_QUAD=y" in sdkconfig:
         raise DemoError("RLCD4.2 requires 8 MB Octal PSRAM configuration")

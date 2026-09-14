@@ -10,13 +10,13 @@ endif()
 set(EXTRA_COMPONENT_DIRS "${SAANOTTS_ROOT}/esp32/components")
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-set(PROJECT_VER "0.1.0")
+set(PROJECT_VER "0.2.0")
 project(rlcd42_sanotts_demo)
 
 if(NOT SAAN_BOARD_PROBE)
     set(SAAN_ASSET_DIR "${CMAKE_CURRENT_LIST_DIR}/../assets")
     if(NOT DEFINED SAAN_MODEL_BLOB)
-        set(SAAN_MODEL_BLOB "${SAAN_ASSET_DIR}/saanotts-jp-v3-int8.bin")
+        set(SAAN_MODEL_BLOB "${SAAN_ASSET_DIR}/saanotts-jp-v4-int8.bin")
     endif()
 
     if(NOT EXISTS "${SAAN_MODEL_BLOB}")
@@ -28,12 +28,12 @@ if(NOT SAAN_BOARD_PROBE)
 
     file(SIZE "${SAAN_MODEL_BLOB}" SAAN_MODEL_BLOB_SIZE)
     file(SHA256 "${SAAN_MODEL_BLOB}" SAAN_MODEL_BLOB_SHA256)
-    if(NOT SAAN_MODEL_BLOB_SIZE EQUAL 643936)
+    if(NOT SAAN_MODEL_BLOB_SIZE EQUAL 654032)
         message(FATAL_ERROR
-            "Unexpected int8 model size: ${SAAN_MODEL_BLOB_SIZE} B (expected 643936 B)")
+            "Unexpected int8 model size: ${SAAN_MODEL_BLOB_SIZE} B (expected 654032 B)")
     endif()
     if(NOT SAAN_MODEL_BLOB_SHA256 STREQUAL
-           "c3b89216133fa7bee3f61ed9d8e6c7183a5dfd41b70dab194f42c20fce5b4170")
+           "a1eb6b0812e2ad2a228836088a3e34160cb66731492fb957a5891605db2fa1b6")
         message(FATAL_ERROR "Unexpected int8 model SHA-256: ${SAAN_MODEL_BLOB_SHA256}")
     endif()
     message(STATUS "RLCD4.2 sanoTTS model: ${SAAN_MODEL_BLOB} (${SAAN_MODEL_BLOB_SIZE} B)")

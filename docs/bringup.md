@@ -115,7 +115,7 @@ minimum internal DRAM:
 - [ ] 起動時に自動合成しなかった
 - [ ] USBから明示した基準文だけを合成した
 - [ ] 基準文が再起動／watchdogなしで完了した
-- [ ] 上流既定速度1.0倍のPCM samples = 27136をアンカーとして記録した
+- [ ] v4モデル・duration 1.15倍でのPCM samples／FNV／クリップ数を記録した（旧v3の27136を流用しない）
 - [ ] RLCD4.2調整速度1.15倍で増えたPCM samplesを記録した
 - [ ] PCM FNV / absmax / sumsqを記録した
 - [ ] ST7305の口表示がPCM振幅に合わせて更新された

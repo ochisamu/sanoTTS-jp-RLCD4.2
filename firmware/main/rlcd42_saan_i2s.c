@@ -1,4 +1,5 @@
-#include "saan_i2s.h"
+#include "saan_audio.h"
+#include "saan_pcm.h"
 
 #include <inttypes.h>
 #include <math.h>
@@ -228,15 +229,21 @@ int16_t saan_f32_to_i16(float x)
     return (int16_t)value;
 }
 
-void saan_i2s_pcm_reset(void)
+void saan_pcm_reset(void)
 {
     s_pcm_fnv = 1469598103934665603ull;
     s_pcm_n = 0;
     s_pcm_absmax = 0;
     s_pcm_sqsum = 0;
     s_clips = 0;
+}
+
+bool saan_audio_begin_utterance(size_t n_samples)
+{
     s_preroll_fill = 0;
-    s_utterance_transport_ok = true;
+    s_utterance_transport_ok = s_preroll && s_stereo &&
+        n_samples <= SAAN_AUDIO_PREROLL_SAMPLES;
+    return s_utterance_transport_ok;
 }
 
 /* main.c is compiled with saan_stream_pull renamed to this wrapper. That keeps
@@ -259,13 +266,13 @@ saan_status rlcd42_saan_stream_init(saan_stream *stream, const saan_weights *wei
                             duration_scale * SPEECH_DURATION_SCALE);
 }
 
-uint32_t saan_i2s_clip_count(void) { return s_clips; }
-uint64_t saan_i2s_pcm_checksum(void) { return s_pcm_fnv; }
-uint32_t saan_i2s_pcm_samples(void) { return s_pcm_n; }
-int32_t saan_i2s_pcm_absmax(void) { return (int32_t)s_pcm_absmax; }
-uint64_t saan_i2s_pcm_sqsum(void) { return s_pcm_sqsum; }
+uint32_t saan_pcm_clip_count(void) { return s_clips; }
+uint64_t saan_pcm_checksum(void) { return s_pcm_fnv; }
+uint32_t saan_pcm_samples(void) { return s_pcm_n; }
+int32_t saan_pcm_absmax(void) { return (int32_t)s_pcm_absmax; }
+uint64_t saan_pcm_sqsum(void) { return s_pcm_sqsum; }
 
-bool saan_i2s_setup(uint32_t sample_rate)
+bool saan_audio_setup(uint32_t sample_rate)
 {
     if (!rlcd42_board_init()) {
         ESP_LOGE(TAG, "RLCD4.2 safety initialization failed; PA remains off");
@@ -280,7 +287,7 @@ bool saan_i2s_setup(uint32_t sample_rate)
                                     MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
     }
     if (!s_preroll) {
-        s_preroll = heap_caps_malloc(SAAN_I2S_PREROLL_SAMPLES * sizeof(*s_preroll),
+        s_preroll = heap_caps_malloc(SAAN_AUDIO_PREROLL_SAMPLES * sizeof(*s_preroll),
                                      MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
     }
     if (!s_stereo || !s_preroll) {
@@ -360,9 +367,9 @@ bool saan_i2s_setup(uint32_t sample_rate)
 #endif
 }
 
-bool saan_i2s_preroll_push(const float *pcm, size_t samples)
+bool saan_audio_preroll_push(const float *pcm, size_t samples)
 {
-    if ((size_t)s_preroll_fill + samples > SAAN_I2S_PREROLL_SAMPLES) {
+    if ((size_t)s_preroll_fill + samples > SAAN_AUDIO_PREROLL_SAMPLES) {
         s_utterance_transport_ok = false;
         return false;
     }
@@ -372,7 +379,7 @@ bool saan_i2s_preroll_push(const float *pcm, size_t samples)
     return true;
 }
 
-bool saan_i2s_start(void)
+bool saan_audio_start(void)
 {
 #if SAAN_SKIP_I2S
     rlcd42_display_set_speaking(true);
@@ -511,7 +518,7 @@ codec_fail:
 #endif
 }
 
-bool saan_i2s_write_f32(const float *pcm, size_t samples)
+bool saan_audio_write_f32(const float *pcm, size_t samples)
 {
     while (samples > 0) {
         const size_t count = samples > SAAN_I2S_MAXBUF ? SAAN_I2S_MAXBUF : samples;
@@ -524,7 +531,7 @@ bool saan_i2s_write_f32(const float *pcm, size_t samples)
     return true;
 }
 
-void saan_i2s_stop(void)
+void saan_audio_stop(void)
 {
 #if !SAAN_SKIP_I2S
     bool shutdown_ok = s_utterance_transport_ok;

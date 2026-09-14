@@ -10,7 +10,7 @@ Code: Copyright ayutaz and contributors, MIT License.
 
 Source: https://github.com/ayutaz/sanoTTS-jp
 
-Pinned revision: `8f76437fe82604b3d77dc6a5ddbd0e4f557a750d`
+Pinned revision: `f427b1e6bf743965c9b033d43fdf84b56f8f7543`
 
 `firmware/main/rlcd42_console.c` preserves sanoTTS-jp's MIT-licensed console
 line-state behavior and adds this repository's board-specific local KEY input.
@@ -19,32 +19,9 @@ The model weights are **not MIT licensed**. They are downloaded separately
 and are covered by `licenses/sanoTTS-jp-model.md`. Generated audio is also
 subject to the output-use restrictions in that license.
 
-Required model attribution (reproduced verbatim from the model license):
-
-```text
-This model was distilled from a piper-plus teacher model.
-sanoTTS-jp — https://github.com/ayutaz/sanoTTS-jp
-
-つくよみちゃんコーパス
-  本ソフトウェアの音声合成には、フリー素材キャラクター「つくよみちゃん」
-  （© 夢前黎）が無料公開している音声データを使用しています。
-  https://tyc.rei-yumesaki.net/material/corpus/
-
-MOE-Speech (litagin) — https://huggingface.co/spaces/litagin/moe-speech-license
-  著作権法 30 条の 4（情報解析のための利用）に基づき学習に使用。
-
-蒸留に使用したテキストコーパス:
-  - Common Voice ja (Mozilla) — CC0-1.0
-      https://github.com/common-voice/common-voice
-  - ROHAN4600 (森勢将雅) — CC0-1.0
-      https://github.com/mmorise/rohan4600
-  - ITA コーパス — CC0-1.0
-      https://github.com/mmorise/ita-corpus
-  - JSUT ver1.1 (高道慎之介) — CC-BY-SA-4.0 ほか（subset 別）
-      https://sites.google.com/site/shinnosuketakamichi/publication/jsut
-
-教師実装: piper-plus (MIT) — https://github.com/ayutaz/piper-plus
-```
+Required v4 model attribution is preserved verbatim in
+`licenses/sanoTTS-jp-NOTICE.txt`, together with the required Apache-2.0
+license in `licenses/sanoTTS-jp-Apache-2.0.txt`. Both accompany built artifacts.
 
 ## Waveshare ESP32-S3-RLCD-4.2 hardware support
 

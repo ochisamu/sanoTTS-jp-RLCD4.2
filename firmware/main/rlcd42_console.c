@@ -141,15 +141,19 @@ bool saan_console_init(void)
     return true;
 }
 
-int saan_console_readline(const char **out)
+void saan_console_prompt(void)
+{
+    put("\r\n" PROMPT);
+}
+
+int saan_console_poll(const char **out, uint32_t wait_ms)
 {
     *out = s_buffer;
-    put("\r\n" PROMPT);
 
     for (;;) {
         unsigned char byte = 0;
         const int received = usb_serial_jtag_read_bytes(
-            &byte, 1, pdMS_TO_TICKS(KEY_POLL_MS));
+            &byte, 1, pdMS_TO_TICKS(wait_ms < KEY_POLL_MS ? wait_ms : KEY_POLL_MS));
         if (received == 1) {
             switch (saan_line_feed(&s_line, byte)) {
             case SAAN_LINE_DONE:
@@ -169,13 +173,13 @@ int saan_console_readline(const char **out)
             return SAAN_CONSOLE_ERROR;
         }
 
-        if (!key_demo_requested()) continue;
+        if (!key_demo_requested()) return SAAN_CONSOLE_PENDING;
         /* DONE deliberately retains the completed USB line until the next USB
          * byte so a delayed LF can be swallowed after CR. That retained line
          * is not an edit conflict: KEY must still work after USB is unplugged. */
         if (!s_line.done && (s_line.len != 0 || s_line.overflow || s_line.esc)) {
             ESP_LOGW(TAG, "KEY demo ignored while a USB input line is being edited");
-            continue;
+            return SAAN_CONSOLE_PENDING;
         }
         *out = SAAN_DEMO_INTERMEDIATE;
         put("\r\n[KEY] " SAAN_DEMO_INTERMEDIATE "\r\n");

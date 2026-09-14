@@ -27,6 +27,7 @@ else()
     set(SAAN_APP_SRCS
         "${SAAN_MAIN}/main.c"
         "${SAAN_MAIN}/saan_model.c"
+        "${SAAN_MAIN}/saan_ui_null.c"
         "rlcd42_console.c"
         "rlcd42_entry.c"
         "rlcd42_board.c"
@@ -50,6 +51,7 @@ else()
             saanotts_core
             driver
             esp_adc
+            esp_mm
             esp_partition
             esp_psram
             esp_timer
@@ -75,7 +77,7 @@ else()
     target_compile_definitions(${COMPONENT_LIB} PRIVATE
         RLCD42_SANOTTS_DEMO=1
         SAAN_BOOT_SPEAK=0
-        SAAN_I2S_PREROLL_SAMPLES=262144
+        SAAN_AUDIO_PREROLL_SAMPLES=262144
     )
 endif()
 
