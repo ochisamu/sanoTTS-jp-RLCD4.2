@@ -26,7 +26,7 @@ def main():
     (args.out/'build-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     paths=sorted(p for p in args.out.rglob('*') if p.is_file())
     (args.out/'SHA256SUMS').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+str(p.relative_to(args.out))+'\n' for p in paths))
-    dest=args.out.with_suffix('.zip')
+    dest=args.out.parent/(args.out.name+'.zip')
     if dest.exists():raise FileExistsError(dest)
     with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as z:
         for file in sorted(args.out.rglob('*')):
