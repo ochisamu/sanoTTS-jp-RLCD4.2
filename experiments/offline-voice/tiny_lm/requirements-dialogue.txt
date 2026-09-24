@@ -1,0 +1,7 @@
+-r requirements.txt
+transformers==4.57.6
+tokenizers==0.22.2
+huggingface-hub==0.36.2
+pyopenjtalk==0.4.1
+sentencepiece==0.2.1
+protobuf==5.29.5

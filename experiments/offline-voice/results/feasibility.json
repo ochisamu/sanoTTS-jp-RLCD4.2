@@ -1,0 +1,145 @@
+{
+  "model": "moonshine-ai/moonshine-tiny-ja",
+  "revision": "02ca41b3d9e73db07df9a13f316f2b7497a368e2",
+  "dataset": "UsefulSensors/multilingual_examples",
+  "dataset_revision": "badcb6e16db6bc982b48e2befb30c771f2ebb511",
+  "sample_count": 1,
+  "audio_seconds": 10.44,
+  "seed": 42,
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "manifest": [
+    {
+      "file": ".cache/model/config.json",
+      "bytes": 892,
+      "sha256": "6f50c12148161de95a8bcffa28e08c077ad65f23b9a4d4c0d12b75889ec9be28"
+    },
+    {
+      "file": ".cache/model/generation_config.json",
+      "bytes": 184,
+      "sha256": "a0d9715619e5041f4912d70a622ed06480b61e1e116c5bd28fbd2d80943ba593"
+    },
+    {
+      "file": ".cache/model/preprocessor_config.json",
+      "bytes": 215,
+      "sha256": "99272fe8ccfab114b68b478681ea47ee3a1ce62bb788cb92dd6e4f69fb1f1da2"
+    },
+    {
+      "file": ".cache/model/tokenizer.json",
+      "bytes": 3761751,
+      "sha256": "ad3a2ceb0e84e4da57451d86fa337f8116dcff5f5d106434f8aa0b0de89718b9"
+    },
+    {
+      "file": ".cache/model/model.safetensors",
+      "bytes": 108389160,
+      "sha256": "59a3138090fac9903210cf0f5839bbfbba385940d6b33dca4483495e96be79d3"
+    },
+    {
+      "file": ".cache/model/LICENSE.txt",
+      "bytes": 11577,
+      "sha256": "af5b7213e07135d1dcd2c745612fa6b074b1f982879f6d52158062f9245b5964"
+    },
+    {
+      "file": ".cache/model/README.md",
+      "bytes": 7816,
+      "sha256": "493b993ca8cd385d9c3c8234440722f83284dddd282440f182fbade7e2be4288"
+    },
+    {
+      "file": ".cache/dataset/README.md",
+      "bytes": 789,
+      "sha256": "4a0c4b9cc64f9a7c04b435b84c17cd7ed4bd690c122b58ffad26c1bf9d8caa2b"
+    },
+    {
+      "file": ".cache/dataset/data/ja-00000-of-00001.parquet",
+      "bytes": 670095,
+      "sha256": "ac44569e65ec99431a19eee6c4e20fb79794fdd16f0edea11a91c92653c111ab"
+    }
+  ],
+  "warning": "One clip smoke test, not an accuracy evaluation. GPU timings are not ESP32 timings.",
+  "variants": [
+    {
+      "variant": "baseline_fp32",
+      "unique_parameters": 27092736,
+      "parameter_groups": {
+        "model.encoder.conv1": 36576,
+        "model.encoder.conv2": 1161792,
+        "model.encoder.conv3": 497952,
+        "model.encoder.groupnorm": 576,
+        "model.encoder.layers": 5984064,
+        "model.encoder.layer_norm": 288,
+        "model.decoder.embed_tokens": 9437184,
+        "model.decoder.layers": 9974016,
+        "model.decoder.norm": 288
+      },
+      "int8_weights_only_MiB_lower_bound": 25.837646484375,
+      "int4_weights_only_MiB_lower_bound": 12.9188232421875,
+      "gpu_generation_seconds": 0.44810502394102514,
+      "gpu_rtf": 0.042921937159102024,
+      "gpu_peak_allocated_MiB": 128.52099609375,
+      "raw_character_error_rate": 0.1875,
+      "output_characters": 44,
+      "hit_generation_limit": false
+    },
+    {
+      "variant": "fake_int8_fp32_compute",
+      "unique_parameters": 27092736,
+      "parameter_groups": {
+        "model.encoder.conv1": 36576,
+        "model.encoder.conv2": 1161792,
+        "model.encoder.conv3": 497952,
+        "model.encoder.groupnorm": 576,
+        "model.encoder.layers": 5984064,
+        "model.encoder.layer_norm": 288,
+        "model.decoder.embed_tokens": 9437184,
+        "model.decoder.layers": 9974016,
+        "model.decoder.norm": 288
+      },
+      "int8_weights_only_MiB_lower_bound": 25.837646484375,
+      "int4_weights_only_MiB_lower_bound": 12.9188232421875,
+      "gpu_generation_seconds": 0.4621648160973564,
+      "gpu_rtf": 0.044268660545723794,
+      "gpu_peak_allocated_MiB": 128.5224609375,
+      "raw_character_error_rate": 0.1875,
+      "output_characters": 44,
+      "hit_generation_limit": false
+    },
+    {
+      "variant": "alternate_half_layers_untrained",
+      "unique_parameters": 19113696,
+      "parameter_groups": {
+        "model.encoder.conv1": 36576,
+        "model.encoder.conv2": 1161792,
+        "model.encoder.conv3": 497952,
+        "model.encoder.groupnorm": 576,
+        "model.encoder.layers": 2992032,
+        "model.encoder.layer_norm": 288,
+        "model.decoder.embed_tokens": 9437184,
+        "model.decoder.layers": 4987008,
+        "model.decoder.norm": 288
+      },
+      "int8_weights_only_MiB_lower_bound": 18.228240966796875,
+      "int4_weights_only_MiB_lower_bound": 9.114120483398438,
+      "gpu_generation_seconds": 0.024256577948108315,
+      "gpu_rtf": 0.0023234270065237853,
+      "gpu_peak_allocated_MiB": 98.85986328125,
+      "raw_character_error_rate": 1.0,
+      "output_characters": 4,
+      "hit_generation_limit": false
+    }
+  ],
+  "training_smoke_test": {
+    "variant": "alternate_half_layers",
+    "steps": 3,
+    "batch_size": 1,
+    "precision": "bf16 autocast; fp32 parameters/AdamW",
+    "seconds": 0.49638211203273386,
+    "losses": [
+      7.161265850067139,
+      7.053018093109131,
+      6.94996976852417
+    ],
+    "peak_allocated_MiB": 392.21337890625,
+    "warning": "Same clip used for evaluation/training; no generalization claim; no weights saved."
+  }
+}

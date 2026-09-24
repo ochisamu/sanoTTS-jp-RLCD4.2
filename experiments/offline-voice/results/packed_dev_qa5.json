@@ -1,0 +1,9 @@
+{
+  "dev_utterances": 64,
+  "reference_phonemes": 6575,
+  "edit_errors": 953,
+  "PER": 0.1449429657794677,
+  "runtime": "portable C, packed int8 weights, per-patch int8 activations; CPU, not ESP32",
+  "attention_quantization": 5,
+  "warning": "Development subset; no independent final-test claim."
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-24",
+  "reference_seconds": 6.6,
+  "baseline_ms": 36128,
+  "tile_and_rope_ms": 34618,
+  "transpose_values_ms": 32554,
+  "int8_attention_ms": 25623,
+  "fast_math_and_quantization_ms": 13565,
+  "native_qa5_argmax_fnv1a32": "bb0f0a32",
+  "esp32_qa5_argmax_fnv1a32": "bb0f0a32",
+  "development_phoneme_error_baseline": 0.14068441064638784,
+  "development_phoneme_error_qa5": 0.1449429657794677,
+  "warning": "64 tuning clips, not an independent test. Slower than real-time; not conversationally usable. Live short-utterance latency after trimming is not yet measured.",
+  "tts_profile": {
+    "source": "CharaDock AtomEchoPcmProcessor via existing C port",
+    "rlcd_highpass_hz": 300,
+    "body_eq_hz_db": [550, -4],
+    "presence_eq_hz_db": [2600, 5],
+    "limiter_ceiling": 0.7,
+    "output_gain": 1.2,
+    "codec_volume": 100,
+    "duration_multiplier": 0.95,
+    "recorded_pcm_statistics_duration_multiplier": 1.45,
+    "fixed_phrase_raw_rms_pcm16": 1164,
+    "fixed_phrase_processed_rms_pcm16": 2028,
+    "fixed_phrase_processed_peak_pcm16": 12196,
+    "latest_listening_confirmation": false
+  }
+}

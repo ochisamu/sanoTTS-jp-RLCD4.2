@@ -1,0 +1,22 @@
+{
+  "sample": "00118.npz",
+  "seconds": 6.6,
+  "variants": [
+    {
+      "quantized_activations": false,
+      "max_logit_error": 2.6702880859375e-05,
+      "mean_logit_error": 3.420809662202373e-06,
+      "frame_argmax_agreement": 1.0,
+      "ctc_sequence_agrees": true,
+      "native_seconds": 0.8175960939843208
+    },
+    {
+      "quantized_activations": true,
+      "max_logit_error": 1.1242194175720215,
+      "mean_logit_error": 0.13677561283111572,
+      "frame_argmax_agreement": 0.9816849816849816,
+      "ctc_sequence_agrees": false,
+      "native_seconds": 0.2484968330245465
+    }
+  ]
+}

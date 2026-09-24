@@ -1,0 +1,23 @@
+This Moonshine AI Model is licensed under the Moonshine AI Community License, Copyright © Moonshine AI Ltd. All Rights Reserved
+
+Powered by Moonshine AI
+
+Upstream: https://huggingface.co/moonshine-ai/moonshine-tiny-ja
+Pinned revision: 02ca41b3d9e73db07df9a13f316f2b7497a368e2
+License: Moonshine-Community-LICENSE.txt (original downloaded text).
+AUP: https://moonshine.ai/use-policy
+
+Lab modifications (not made or endorsed by Moonshine AI): retained six encoder
+layers, replaced the sequence decoder with a 41-symbol phoneme CTC head,
+fine-tuned using Japanese FLEURS training audio, quantized and packed W8A8
+weights, implemented an independent ESP32-S3 C inference runtime.
+The model is not licensed under this repository's MIT license.
+
+Fine-tuning data: Google FLEURS, Japanese ja_jp training split.
+https://huggingface.co/datasets/google/fleurs
+Revision: 70bb2e84b976b7e960aa89f1c648e09c59f894dd
+FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech,
+Alexis Conneau et al., 2022. CC BY 4.0:
+https://creativecommons.org/licenses/by/4.0/
+Changes: filtering, audio preparation, transcription-to-phoneme conversion
+and use for encoder/CTC training. Audio and prepared data are not bundled.

@@ -1,0 +1,8 @@
+torch==2.10.0
+transformers==4.57.6
+huggingface-hub==0.36.2
+numpy==2.2.6
+soundfile==0.13.1
+pyarrow==21.0.0
+pyopenjtalk==0.4.1
+pyserial==3.5

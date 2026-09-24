@@ -1,3 +1,6 @@
 [submodule "third_party/sanoTTS-jp"]
 	path = third_party/sanoTTS-jp
 	url = https://github.com/ayutaz/sanoTTS-jp.git
+[submodule "experiments/offline-voice/third_party/sanoTTS-jp"]
+	path = experiments/offline-voice/third_party/sanoTTS-jp
+	url = https://github.com/ayutaz/sanoTTS-jp.git

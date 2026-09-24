@@ -1,4 +1,42 @@
-# RLCD 4.2 sanoTTS demo
+# RLCD 4.2 — sanoTTS / Offline Japanese Voice Lab
+
+[English](README.en.md) · [音声認識・対話実験](experiments/offline-voice/README.md) · [学習元](experiments/offline-voice/docs/TRAINING.md) · [ライセンス](experiments/offline-voice/licenses/README.md)
+
+## オフライン音声対話デモ
+
+[![RLCD4.2の実機デモ。クリックで音付き動画](media/offline-voice-preview.gif)](https://github.com/ochisamu/sanoTTS-jp-RLCD4.2/blob/main/media/offline-voice-demo.mp4)
+
+クリックすると音付き動画を開けます。プレビューは無音・低フレームレートです。
+動画は利用者提供の実機記録で、認識・推論時間を短縮していません。字幕見出しは
+撮影時の版で、現行ファームでは `HEARD` / `REPLY` です。
+
+**Powered by Moonshine AI**
+
+今回追加した [experiments/offline-voice](experiments/offline-voice/README.md) は、
+マイク→日本語音声認識→かな→端末内知識／小型生成LM→sanoTTS→スピーカーを
+ESP32-S3だけで実行する実験版です。KEYはおうむ返し、BOOTは回答と読み上げ。
+大きな顔・英語ステータス・一時的な日本語字幕を表示します。
+Wi-Fi・クラウド・PC推論は使いません。**一般会話の品質は未達で、誤答します。**
+
+このリポジトリには2種類の別ファームがあります。混ぜて書き込まないでください。
+
+| フォルダ | 内容 |
+| --- | --- |
+| `firmware/`, `tools/demo.py` | 既存のTTS専用版。USBから文章を入力、漢字辞書対応 |
+| `experiments/offline-voice/` | 新しいSTT＋SLM＋TTS実験。かな認識・既知回答の漢字字幕 |
+
+[Release](https://github.com/ochisamu/sanoTTS-jp-RLCD4.2/releases) の音声対話ファームは
+**モデル非同梱の開発者向けプレビュー**です。これだけでは新品の端末で認識・対話はできません。
+STT/SLM/TTSモデルを別途準備してください。既存TTS版とはFlash配置が異なります。
+[書き込み条件](experiments/offline-voice/docs/FIRMWARE_RELEASE.md)を必ず確認してください。
+学習元・量子化モデル・録音・個体バックアップはGitにもReleaseにも収録しません。
+対話重みの再配布判断は保留しています。
+
+音声合成: sanoTTS-jp / つくよみちゃん（© Rei Yumesaki、CV.夢前黎）。
+必須帰属文と[音声利用条件](experiments/offline-voice/licenses/VOICE_TERMS.md)は実験版READMEに記載しています。
+動画・音声は自由な再利用素材としての提供ではありません。
+
+## 既存のTTS専用版
 
 Waveshare `ESP32-S3-RLCD-4.2` 専用の、オフライン日本語音声合成
 [`sanoTTS-jp`](https://github.com/ayutaz/sanoTTS-jp) ファームウェアと実機デモツールです。

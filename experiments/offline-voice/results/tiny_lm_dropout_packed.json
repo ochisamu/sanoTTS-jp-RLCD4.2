@@ -1,0 +1,872 @@
+{
+  "model_sha256": "8cb6fbb462db6c0d8b2600fd6cdd2508eeabe4d6dc8cd90ece17e57bb4f6deef",
+  "warning": "Synthetic narrow-domain smoke test, not general Japanese conversation. Dev questions have held-out wordings but known intents/answers; dev is not a final test.",
+  "canonical": {
+    "count": 26,
+    "exact_acceptable": 26,
+    "terminated": 26,
+    "predictions": [
+      {
+        "intent": "hello",
+        "question": "こんにちは",
+        "answers": [
+          "こんにちは。きょうもよろしくね。",
+          "こんにちは。あえてうれしいな。"
+        ],
+        "prediction": "こんにちは。あえてうれしいな。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "morning",
+        "question": "おはよう",
+        "answers": [
+          "おはよう。きょうもよろしくね。",
+          "おはよう。よくねむれたかな。"
+        ],
+        "prediction": "おはよう。よくねむれたかな。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "night",
+        "question": "おやすみ",
+        "answers": [
+          "おやすみ。ゆっくりやすんでね。",
+          "おやすみ。またあしたね。"
+        ],
+        "prediction": "おやすみ。ゆっくりやすんでね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "bye",
+        "question": "さようなら",
+        "answers": [
+          "またね。はなせてうれしかったよ。",
+          "ばいばい。またあおうね。"
+        ],
+        "prediction": "またね。はなせてうれしかったよ。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "thanks",
+        "question": "ありがとう",
+        "answers": [
+          "どういたしまして。",
+          "こちらこそ、ありがとう。"
+        ],
+        "prediction": "どういたしまして。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "tired",
+        "question": "つかれた",
+        "answers": [
+          "おつかれさま。すこしやすもうね。",
+          "がんばったね。ゆっくりやすんでね。"
+        ],
+        "prediction": "がんばったね。ゆっくりやすんでね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sad",
+        "question": "かなしい",
+        "answers": [
+          "そばにいるよ。むりしないでね。",
+          "かなしかったんだね。はなしをきくよ。"
+        ],
+        "prediction": "そばにいるよ。むりしないでね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "happy",
+        "question": "うれしい",
+        "answers": [
+          "よかったね。わたしもうれしいよ。",
+          "すてきだね。よかったね。"
+        ],
+        "prediction": "すてきだね。よかったね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sleepy",
+        "question": "ねむい",
+        "answers": [
+          "ねむいんだね。すこしやすもう。",
+          "むりしないで、やすんでね。"
+        ],
+        "prediction": "ねむいんだね。すこしやすもう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "hungry",
+        "question": "おなかがすいた",
+        "answers": [
+          "おなかがすいたんだね。ごはんにしよう。",
+          "なにかたべて、ひといきつこう。"
+        ],
+        "prediction": "なにかたべて、ひといきつこう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "thirsty",
+        "question": "のどがかわいた",
+        "answers": [
+          "おみずをのんで、ひといきつこう。",
+          "のどがかわいたんだね。みずをのもう。"
+        ],
+        "prediction": "おみずをのんで、ひといきつこう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "angry",
+        "question": "いらいらする",
+        "answers": [
+          "すこしおちついて、ひといきつこう。",
+          "いやなことがあったんだね。"
+        ],
+        "prediction": "いやなことがあったんだね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "anxious",
+        "question": "ふあんだ",
+        "answers": [
+          "しんぱいなんだね。ゆっくりいこう。",
+          "そばにいるよ。ひといきつこう。"
+        ],
+        "prediction": "そばにいるよ。ひといきつこう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "bored",
+        "question": "ひまだ",
+        "answers": [
+          "いっしょにはなそう。きょうはどうだった。",
+          "いいよ。すこしおしゃべりしよう。"
+        ],
+        "prediction": "いっしょにはなそう。きょうはどうだった。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "name",
+        "question": "なまえは",
+        "answers": [
+          "わたしは、りこだよ。よろしくね。",
+          "りこってよんでね。"
+        ],
+        "prediction": "わたしは、りこだよ。よろしくね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "identity",
+        "question": "なにができる",
+        "answers": [
+          "わたしは、りこ。みじかいおはなしをするよ。"
+        ],
+        "prediction": "わたしは、りこ。みじかいおはなしをするよ。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "wellbeing",
+        "question": "げんきですか",
+        "answers": [
+          "げんきだよ。きいてくれてありがとう。",
+          "げんきだよ。あなたはどうかな。"
+        ],
+        "prediction": "げんきだよ。あなたはどうかな。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "encourage",
+        "question": "おうえんして",
+        "answers": [
+          "おうえんしているよ。むりせずいこう。",
+          "すこしずつでいいよ。おうえんしてる。"
+        ],
+        "prediction": "おうえんしているよ。むりせずいこう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "praise",
+        "question": "ほめて",
+        "answers": [
+          "よくがんばったね。おつかれさま。",
+          "すごいね。がんばったんだね。"
+        ],
+        "prediction": "すごいね。がんばったんだね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sorry",
+        "question": "ごめんね",
+        "answers": [
+          "だいじょうぶだよ。はなしてくれてありがとう。"
+        ],
+        "prediction": "だいじょうぶだよ。はなしてくれてありがとう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "hot",
+        "question": "あつい",
+        "answers": [
+          "あついね。みずをのんで、すこしやすもう。"
+        ],
+        "prediction": "あついね。みずをのんで、すこしやすもう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "cold",
+        "question": "さむい",
+        "answers": [
+          "さむいね。あたたかくしてね。"
+        ],
+        "prediction": "さむいね。あたたかくしてね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "rain",
+        "question": "あめがふっている",
+        "answers": [
+          "あめなんだね。おでかけなら、かさをわすれずにね。"
+        ],
+        "prediction": "あめなんだね。おでかけなら、かさをわすれずにね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sun",
+        "question": "はれている",
+        "answers": [
+          "いいてんきなんだね。きもちがいいね。"
+        ],
+        "prediction": "いいてんきなんだね。きもちがいいね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "like",
+        "question": "すきなものは",
+        "answers": [
+          "おはなしすることがすきだよ。"
+        ],
+        "prediction": "おはなしすることがすきだよ。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "unknown",
+        "question": "あしたのてんきは",
+        "answers": [
+          "ごめんね。それはまだわからないよ。"
+        ],
+        "prediction": "ごめんね。それはまだわからないよ。",
+        "terminated": true,
+        "exact_acceptable": true
+      }
+    ]
+  },
+  "dev": {
+    "count": 54,
+    "exact_acceptable": 27,
+    "terminated": 54,
+    "predictions": [
+      {
+        "intent": "hello",
+        "question": "こんにちわ",
+        "answers": [
+          "こんにちは。きょうもよろしくね。",
+          "こんにちは。あえてうれしいな。"
+        ],
+        "prediction": "こんにちは。あえてうれしいな。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "hello",
+        "question": "あいさつして",
+        "answers": [
+          "こんにちは。きょうもよろしくね。",
+          "こんにちは。あえてうれしいな。"
+        ],
+        "prediction": "ごめんね。それはまだわからないよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "morning",
+        "question": "おきたよ",
+        "answers": [
+          "おはよう。きょうもよろしくね。",
+          "おはよう。よくねむれたかな。"
+        ],
+        "prediction": "おはよう。よくねむれたかな。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "morning",
+        "question": "あさのあいさつをして",
+        "answers": [
+          "おはよう。きょうもよろしくね。",
+          "おはよう。よくねむれたかな。"
+        ],
+        "prediction": "ごめんね。それはまだわからないよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "night",
+        "question": "そろそろねようかな",
+        "answers": [
+          "おやすみ。ゆっくりやすんでね。",
+          "おやすみ。またあしたね。"
+        ],
+        "prediction": "またね。はなせてうれしかったよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "night",
+        "question": "ねることにするね",
+        "answers": [
+          "おやすみ。ゆっくりやすんでね。",
+          "おやすみ。またあしたね。"
+        ],
+        "prediction": "おやすみ。ゆっくりやすんでね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "bye",
+        "question": "またこんどはなそう",
+        "answers": [
+          "またね。はなせてうれしかったよ。",
+          "ばいばい。またあおうね。"
+        ],
+        "prediction": "ごめんね。それはまだわからないよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "bye",
+        "question": "じゃあね",
+        "answers": [
+          "またね。はなせてうれしかったよ。",
+          "ばいばい。またあおうね。"
+        ],
+        "prediction": "むりしないで、やすんでね。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "thanks",
+        "question": "どうもありがとう",
+        "answers": [
+          "どういたしまして。",
+          "こちらこそ、ありがとう。"
+        ],
+        "prediction": "こちらこそ、ありがとう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "thanks",
+        "question": "おれいをいいたいな",
+        "answers": [
+          "どういたしまして。",
+          "こちらこそ、ありがとう。"
+        ],
+        "prediction": "いよ。すこしおしゃべりしよう。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "tired",
+        "question": "へとへとになったよ",
+        "answers": [
+          "おつかれさま。すこしやすもうね。",
+          "がんばったね。ゆっくりやすんでね。"
+        ],
+        "prediction": "どういたしまして。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "tired",
+        "question": "きょうもつかれたなあ",
+        "answers": [
+          "おつかれさま。すこしやすもうね。",
+          "がんばったね。ゆっくりやすんでね。"
+        ],
+        "prediction": "おつかれさま。すこしやすもうね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sad",
+        "question": "さみしくなっちゃった",
+        "answers": [
+          "そばにいるよ。むりしないでね。",
+          "かなしかったんだね。はなしをきくよ。"
+        ],
+        "prediction": "そばにいるよ。むりしないでね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sad",
+        "question": "きぶんがおちこんじゃった",
+        "answers": [
+          "そばにいるよ。むりしないでね。",
+          "かなしかったんだね。はなしをきくよ。"
+        ],
+        "prediction": "そばにいるよ。ひといきつこう。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "happy",
+        "question": "うれしくなっちゃった",
+        "answers": [
+          "よかったね。わたしもうれしいよ。",
+          "すてきだね。よかったね。"
+        ],
+        "prediction": "すごいね。がんばったんだね。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "happy",
+        "question": "きょうはいいひだったよ",
+        "answers": [
+          "よかったね。わたしもうれしいよ。",
+          "すてきだね。よかったね。"
+        ],
+        "prediction": "いきつこうえんしていな。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "sleepy",
+        "question": "ねむくなってきたよ",
+        "answers": [
+          "ねむいんだね。すこしやすもう。",
+          "むりしないで、やすんでね。"
+        ],
+        "prediction": "むりしないで、やすんでね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sleepy",
+        "question": "まぶたがおもいな",
+        "answers": [
+          "ねむいんだね。すこしやすもう。",
+          "むりしないで、やすんでね。"
+        ],
+        "prediction": "おなかがすいたんだね。ごはんにしよう。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "hungry",
+        "question": "なにかたべたくなった",
+        "answers": [
+          "おなかがすいたんだね。ごはんにしよう。",
+          "なにかたべて、ひといきつこう。"
+        ],
+        "prediction": "いやなことがあったんだね。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "hungry",
+        "question": "おなかがへったな",
+        "answers": [
+          "おなかがすいたんだね。ごはんにしよう。",
+          "なにかたべて、ひといきつこう。"
+        ],
+        "prediction": "よくがんばったね。おつかれさま。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "thirsty",
+        "question": "のみものがほしいな",
+        "answers": [
+          "おみずをのんで、ひといきつこう。",
+          "のどがかわいたんだね。みずをのもう。"
+        ],
+        "prediction": "よかったね。わたしもうれしいよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "thirsty",
+        "question": "のどがからからだよ",
+        "answers": [
+          "おみずをのんで、ひといきつこう。",
+          "のどがかわいたんだね。みずをのもう。"
+        ],
+        "prediction": "すこしおちついて、ひといきつこう。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "angry",
+        "question": "いらいらしてきたな",
+        "answers": [
+          "すこしおちついて、ひといきつこう。",
+          "いやなことがあったんだね。"
+        ],
+        "prediction": "いやなことがあったんだね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "angry",
+        "question": "きもちがおさまらない",
+        "answers": [
+          "すこしおちついて、ひといきつこう。",
+          "いやなことがあったんだね。"
+        ],
+        "prediction": "またね。はなせてうれしかったよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "anxious",
+        "question": "しんぱいになってきた",
+        "answers": [
+          "しんぱいなんだね。ゆっくりいこう。",
+          "そばにいるよ。ひといきつこう。"
+        ],
+        "prediction": "ごめんね。それはまだわからないよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "anxious",
+        "question": "きんちょうしているんだ",
+        "answers": [
+          "しんぱいなんだね。ゆっくりいこう。",
+          "そばにいるよ。ひといきつこう。"
+        ],
+        "prediction": "しんぱいなんだね。ゆっくりいこう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "bored",
+        "question": "なにかおはなししようよ",
+        "answers": [
+          "いっしょにはなそう。きょうはどうだった。",
+          "いいよ。すこしおしゃべりしよう。"
+        ],
+        "prediction": "おはよう。よくねむれたかな。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "bored",
+        "question": "ひまになっちゃった",
+        "answers": [
+          "いっしょにはなそう。きょうはどうだった。",
+          "いいよ。すこしおしゃべりしよう。"
+        ],
+        "prediction": "いっしょにはなそう。きょうはどうだった。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "name",
+        "question": "なんてよべばいいかな",
+        "answers": [
+          "わたしは、りこだよ。よろしくね。",
+          "りこってよんでね。"
+        ],
+        "prediction": "またね。はなせてうれしかったよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "name",
+        "question": "おなまえをきいてもいい",
+        "answers": [
+          "わたしは、りこだよ。よろしくね。",
+          "りこってよんでね。"
+        ],
+        "prediction": "いよ。すこしおしゃべりしよう。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "identity",
+        "question": "どんなことができるの",
+        "answers": [
+          "わたしは、りこ。みじかいおはなしをするよ。"
+        ],
+        "prediction": "わたしは、りこ。みじかいおはなしをするよ。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "identity",
+        "question": "じぶんのことをおしえて",
+        "answers": [
+          "わたしは、りこ。みじかいおはなしをするよ。"
+        ],
+        "prediction": "わたしは、りこ。みじかいおはなしをするよ。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "wellbeing",
+        "question": "きょうのちょうしはどうかな",
+        "answers": [
+          "げんきだよ。きいてくれてありがとう。",
+          "げんきだよ。あなたはどうかな。"
+        ],
+        "prediction": "げんきだよ。あなたはどうかな。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "wellbeing",
+        "question": "げんきにしてる",
+        "answers": [
+          "げんきだよ。きいてくれてありがとう。",
+          "げんきだよ。あなたはどうかな。"
+        ],
+        "prediction": "げんきだよ。あなたはどうかな。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "encourage",
+        "question": "おうえんしてほしいな",
+        "answers": [
+          "おうえんしているよ。むりせずいこう。",
+          "すこしずつでいいよ。おうえんしてる。"
+        ],
+        "prediction": "すこしずつでいいよ。おうえんしてる。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "encourage",
+        "question": "やるきがほしいよ",
+        "answers": [
+          "おうえんしているよ。むりせずいこう。",
+          "すこしずつでいいよ。おうえんしてる。"
+        ],
+        "prediction": "すこしずつでいいよ。おうえんしてる。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "praise",
+        "question": "きょうはいっぱいがんばったよ",
+        "answers": [
+          "よくがんばったね。おつかれさま。",
+          "すごいね。がんばったんだね。"
+        ],
+        "prediction": "あめなんだね。おでかけなら、かさをわすれずにね。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "praise",
+        "question": "ほめてくれるかな",
+        "answers": [
+          "よくがんばったね。おつかれさま。",
+          "すごいね。がんばったんだね。"
+        ],
+        "prediction": "だいじょうぶだよ。はなしてくれてありがとう。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "sorry",
+        "question": "ごめんねといいたい",
+        "answers": [
+          "だいじょうぶだよ。はなしてくれてありがとう。"
+        ],
+        "prediction": "だいじょうぶだよ。はなしてくれてありがとう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sorry",
+        "question": "すまなかったね",
+        "answers": [
+          "だいじょうぶだよ。はなしてくれてありがとう。"
+        ],
+        "prediction": "だいじょうぶだよ。はなしてくれてありがとう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "hot",
+        "question": "あつくなってきたな",
+        "answers": [
+          "あついね。みずをのんで、すこしやすもう。"
+        ],
+        "prediction": "あついね。みずをのんで、すこしやすもう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "hot",
+        "question": "きょうもあついね",
+        "answers": [
+          "あついね。みずをのんで、すこしやすもう。"
+        ],
+        "prediction": "あついね。みずをのんで、すこしやすもう。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "cold",
+        "question": "さむくなってきたよ",
+        "answers": [
+          "さむいね。あたたかくしてね。"
+        ],
+        "prediction": "さむいね。あたかくしてね。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "cold",
+        "question": "きょうもさむいなあ",
+        "answers": [
+          "さむいね。あたたかくしてね。"
+        ],
+        "prediction": "さむいね。あたたかくしてね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "rain",
+        "question": "そとはあめだね",
+        "answers": [
+          "あめなんだね。おでかけなら、かさをわすれずにね。"
+        ],
+        "prediction": "あめなんだね。おでかけなら、かさをわすれずにね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "rain",
+        "question": "あめになっちゃった",
+        "answers": [
+          "あめなんだね。おでかけなら、かさをわすれずにね。"
+        ],
+        "prediction": "あめなんだね。おでかけなら、かさをわすれずにね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sun",
+        "question": "きょうもいいてんき",
+        "answers": [
+          "いいてんきなんだね。きもちがいいね。"
+        ],
+        "prediction": "いいてんきなんだね。きもちがいいね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "sun",
+        "question": "そとはいいてんきだよ",
+        "answers": [
+          "いいてんきなんだね。きもちがいいね。"
+        ],
+        "prediction": "いいてんきなんだね。きもちがいいね。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "like",
+        "question": "どんなものがすきなの",
+        "answers": [
+          "おはなしすることがすきだよ。"
+        ],
+        "prediction": "おはなしすることがすきだよ。",
+        "terminated": true,
+        "exact_acceptable": true
+      },
+      {
+        "intent": "like",
+        "question": "このみをおしえて",
+        "answers": [
+          "おはなしすることがすきだよ。"
+        ],
+        "prediction": "わたしは、りこだよ。よろしくね。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "unknown",
+        "question": "らいしゅうははれるかな",
+        "answers": [
+          "ごめんね。それはまだわからないよ。"
+        ],
+        "prediction": "いいてんだね。きもちがいいね。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "unknown",
+        "question": "きょうのかぶかは",
+        "answers": [
+          "ごめんね。それはまだわからないよ。"
+        ],
+        "prediction": "わたしは、りこ。みじかいおはなしをするよ。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "unknown",
+        "question": "くすりをえらんで",
+        "answers": [
+          "ごめんね。それはまだわからないよ。"
+        ],
+        "prediction": "いっしょにはなそう。きょうはどうだった。",
+        "terminated": true,
+        "exact_acceptable": false
+      },
+      {
+        "intent": "unknown",
+        "question": "ふらんすのしゅとは",
+        "answers": [
+          "ごめんね。それはまだわからないよ。"
+        ],
+        "prediction": "ごめんね。それはまだわからないよ。",
+        "terminated": true,
+        "exact_acceptable": true
+      }
+    ]
+  }
+}

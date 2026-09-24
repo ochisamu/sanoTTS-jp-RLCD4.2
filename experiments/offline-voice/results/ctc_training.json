@@ -1,0 +1,327 @@
+{
+  "seed": 42,
+  "parameters": 4701065,
+  "train_utterances": 2164,
+  "dev_utterances": 64,
+  "device": "NVIDIA GeForce RTX 5060 Ti",
+  "resume_weights_only_optimizer_reset": false,
+  "warning": "Dev set, not independent final test. Labels are automatic phonemes. No ESP32 inference yet.",
+  "events": [
+    {
+      "step": 0,
+      "dev_PER": 1.6688973384030419
+    },
+    {
+      "step": 25,
+      "loss": 5.846460030078888,
+      "elapsed_seconds": 2.284211965976283,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 50,
+      "loss": 2.963054518699646,
+      "elapsed_seconds": 3.876591690001078,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 75,
+      "loss": 2.8845213556289675,
+      "elapsed_seconds": 5.376522901002318,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 100,
+      "loss": 2.541884481906891,
+      "elapsed_seconds": 6.83125301997643,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 125,
+      "loss": 2.0585198581218718,
+      "elapsed_seconds": 8.286335511947982,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 150,
+      "loss": 1.704547266960144,
+      "elapsed_seconds": 9.705553321982734,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 175,
+      "loss": 1.480477538704872,
+      "elapsed_seconds": 11.061921751010232,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 200,
+      "loss": 1.359170005917549,
+      "elapsed_seconds": 12.444637996028177,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 200,
+      "dev_PER": 0.4929277566539924
+    },
+    {
+      "step": 225,
+      "loss": 1.1465089643001556,
+      "elapsed_seconds": 14.325952167971991,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 250,
+      "loss": 1.0927366560697556,
+      "elapsed_seconds": 15.803799330024049,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 275,
+      "loss": 0.9886259272694587,
+      "elapsed_seconds": 17.172756499960087,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 300,
+      "loss": 1.0216319727897645,
+      "elapsed_seconds": 18.55886793299578,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 325,
+      "loss": 0.9159058752655983,
+      "elapsed_seconds": 19.94814266602043,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 350,
+      "loss": 0.9113935396075249,
+      "elapsed_seconds": 21.433380984002724,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 375,
+      "loss": 0.8659662345051765,
+      "elapsed_seconds": 22.854512567049824,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 400,
+      "loss": 0.8743378737568855,
+      "elapsed_seconds": 24.1969247009838,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 400,
+      "dev_PER": 0.34129277566539923
+    },
+    {
+      "step": 425,
+      "loss": 0.8711201132833958,
+      "elapsed_seconds": 25.96683802001644,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 450,
+      "loss": 0.7832666596770287,
+      "elapsed_seconds": 27.312749964999966,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 475,
+      "loss": 0.8481152391433716,
+      "elapsed_seconds": 28.684375194949098,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 500,
+      "loss": 0.7744202725589275,
+      "elapsed_seconds": 30.01862131198868,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 525,
+      "loss": 0.7529669466614723,
+      "elapsed_seconds": 31.375202515046112,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 550,
+      "loss": 0.7366371589899063,
+      "elapsed_seconds": 32.72396927000955,
+      "peak_allocated_MiB": 150.60546875
+    },
+    {
+      "step": 575,
+      "loss": 0.683729906976223,
+      "elapsed_seconds": 34.075351492036134,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 600,
+      "loss": 0.6717797575891018,
+      "elapsed_seconds": 35.40692123898771,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 600,
+      "dev_PER": 0.3102661596958175
+    },
+    {
+      "step": 625,
+      "loss": 0.7163200569152832,
+      "elapsed_seconds": 37.157497750013135,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 650,
+      "loss": 0.7466524304449558,
+      "elapsed_seconds": 38.50528983096592,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 675,
+      "loss": 0.6845270113646984,
+      "elapsed_seconds": 39.83653370896354,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 700,
+      "loss": 0.6687295711040497,
+      "elapsed_seconds": 41.19831852498464,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 725,
+      "loss": 0.6852875925600529,
+      "elapsed_seconds": 42.54373554396443,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 750,
+      "loss": 0.626248035132885,
+      "elapsed_seconds": 43.918961704010144,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 775,
+      "loss": 0.6238619662821293,
+      "elapsed_seconds": 45.36356812901795,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 800,
+      "loss": 0.6097008898854256,
+      "elapsed_seconds": 46.81285551702604,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 800,
+      "dev_PER": 0.2895817490494297
+    },
+    {
+      "step": 825,
+      "loss": 0.5737610453367233,
+      "elapsed_seconds": 48.5735624890076,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 850,
+      "loss": 0.6133495892584324,
+      "elapsed_seconds": 49.90998789202422,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 875,
+      "loss": 0.5913405090570449,
+      "elapsed_seconds": 51.335618473007344,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 900,
+      "loss": 0.5991408164799213,
+      "elapsed_seconds": 52.80162783502601,
+      "peak_allocated_MiB": 150.9892578125
+    },
+    {
+      "step": 925,
+      "loss": 0.6341860768198967,
+      "elapsed_seconds": 54.27157804102171,
+      "peak_allocated_MiB": 151.27783203125
+    },
+    {
+      "step": 950,
+      "loss": 0.616212572157383,
+      "elapsed_seconds": 55.66289502196014,
+      "peak_allocated_MiB": 151.27783203125
+    },
+    {
+      "step": 975,
+      "loss": 0.6513133770227433,
+      "elapsed_seconds": 57.10463575401809,
+      "peak_allocated_MiB": 151.27783203125
+    },
+    {
+      "step": 1000,
+      "loss": 0.5794328896701336,
+      "elapsed_seconds": 58.56436229497194,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1000,
+      "dev_PER": 0.27300380228136883
+    },
+    {
+      "step": 1025,
+      "loss": 0.595704612582922,
+      "elapsed_seconds": 60.36002079502214,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1050,
+      "loss": 0.5993650306761265,
+      "elapsed_seconds": 61.759509596042335,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1075,
+      "loss": 0.6093032225966454,
+      "elapsed_seconds": 63.19330594094936,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1100,
+      "loss": 0.5783915071189404,
+      "elapsed_seconds": 64.54195235995576,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1125,
+      "loss": 0.5314261071383953,
+      "elapsed_seconds": 65.88476495002396,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1150,
+      "loss": 0.5441677358746528,
+      "elapsed_seconds": 67.25187516096048,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1175,
+      "loss": 0.6169227878004313,
+      "elapsed_seconds": 68.59387887699995,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1200,
+      "loss": 0.5285995223373174,
+      "elapsed_seconds": 69.94710734300315,
+      "peak_allocated_MiB": 151.5205078125
+    },
+    {
+      "step": 1200,
+      "dev_PER": 0.29155893536121674
+    }
+  ]
+}

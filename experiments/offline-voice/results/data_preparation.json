@@ -1,0 +1,62 @@
+{
+  "train": {
+    "rows_total": 2292,
+    "kept": 2164,
+    "skipped": {
+      "duration": 128
+    },
+    "hours": 6.689433333333333
+  },
+  "validation": {
+    "rows_total": 266,
+    "kept": 237,
+    "skipped": {
+      "duration": 29
+    },
+    "hours": 0.7707166666666666
+  },
+  "labels": "pyopenjtalk 0.4.1 automatic phonemes, not manually verified",
+  "vocabulary": [
+    "<blank>",
+    "a",
+    "i",
+    "u",
+    "e",
+    "o",
+    "N",
+    "cl",
+    "pau",
+    "k",
+    "ky",
+    "kw",
+    "g",
+    "gy",
+    "gw",
+    "s",
+    "sh",
+    "z",
+    "j",
+    "t",
+    "ty",
+    "ch",
+    "ts",
+    "d",
+    "dy",
+    "n",
+    "ny",
+    "h",
+    "hy",
+    "f",
+    "b",
+    "by",
+    "p",
+    "py",
+    "m",
+    "my",
+    "y",
+    "r",
+    "ry",
+    "w",
+    "v"
+  ]
+}

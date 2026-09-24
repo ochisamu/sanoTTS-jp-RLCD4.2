@@ -1,0 +1,33 @@
+CharaDock-derived ATOM Echo speaker processing
+Copyright 2026 ochisamu
+Copyright 2026 masa
+Licensed under the Apache License, Version 2.0.
+See waveshare-examples-Apache-2.0.txt in this directory (Apache-2.0 text).
+
+Sources:
+CharaDock, revision e42438fbaa9831770bd66c7fd723c6e4921cd54c
+https://github.com/ochisamu/CharaDock/blob/e42438fbaa9831770bd66c7fd723c6e4921cd54c/desktop/lib/device-audio.cjs
+CharaDock-ESP32, revision e10ea28e137c23e9d7e4cc86680a3d69ef61792f
+https://github.com/ochisamu/CharaDock-ESP32/blob/e10ea28e137c23e9d7e4cc86680a3d69ef61792f/firmware/atom-echo/src/main.cpp
+
+Modified files: firmware/main/echo_dsp.c and echo_dsp.h translate the
+CharaDock processor into C float arithmetic at 22050 Hz, with fixed-size
+state/tail storage, invalid-state handling and a legacy comparison mode.
+tests/reference_atom_echo.cjs retains the relevant JavaScript DSP excerpt
+with only a standalone export and attribution wrapper.
+Transport design references: stereo duplication, larger DMA queue and drain.
+The firmware uses ESP-IDF 5.5.4's I2S channel API instead of the legacy API.
+
+Relevant upstream notice:
+CharaDock
+Copyright 2026 ochisamu
+This product is an unofficial derivative application based on PuruPuru PNGTuber.
+It is not endorsed by or affiliated with the original PuruPuru PNGTuber developer.
+PuruPuru PNGTuber
+Copyright 2026 masa
+https://github.com/rotejin/PuruPuruPNGTuber
+Licensed under the Apache License, Version 2.0.
+
+Only audio code/design is reused here. No CharaDock avatars, character assets,
+favicon, desktop application, voices, or other bundled media are included.
+No endorsement or physical validation of this port is implied.

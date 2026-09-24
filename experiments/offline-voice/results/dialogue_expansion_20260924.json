@@ -1,0 +1,503 @@
+{
+  "date": "2026-09-24",
+  "status": "research_improved_but_broad_dialogue_gate_failed",
+  "device_changed": false,
+  "published": false,
+  "pushed": false,
+  "model": {
+    "bytes": 3074496,
+    "sha256": "985505b6abfe3504ccadd6b535a48a87e8a48ebb61183af0e9d8305cf5ef26e7",
+    "merges": 918,
+    "token_stride": 40,
+    "checkpoint_sha256": "548acd87786e22980c373c25ebf4c44d77ccb54e6284cde5dbdddd59f6f87392",
+    "tokenizer_sha256": "f10f047c2fb9ccb5148ead846b4bed507e395c22696de33a560f4ac0bd6e2ab7"
+  },
+  "coverage": {
+    "semantic_families": 114,
+    "base_questions": 622,
+    "reviewed_teacher_additions": 336,
+    "augmented_rows": 14928,
+    "dev_rows": 137,
+    "rejected": {
+      "duplicate": 70,
+      "manual semantic/grammar rejection": 82,
+      "invalid teacher schema": 32
+    },
+    "teacher_artifact_sha256": "f8d1191966e83dc0451be57a4d222d5cad92cfd790a338b066eadba077668053",
+    "warning": "No additional topics or answers from teacher. Longer prefix/suffix augmentation is not independent semantic diversity. Dev remains known-intent wording dev, not open-domain/test."
+  },
+  "comparisons": [
+    {
+      "candidate": "daily-char-256",
+      "artifact_sha256": "c7aae9396fcf72dd64ed368351fb5a577139707746a9bed7ff44896a580a01a4",
+      "runtime": "native C W8A8",
+      "summary": {
+        "train_canonical": {
+          "total": 114,
+          "exact": 114,
+          "terminated": 114
+        },
+        "wording_dev": {
+          "total": 137,
+          "exact": 41,
+          "terminated": 137
+        }
+      }
+    },
+    {
+      "candidate": "daily-aug-char-256",
+      "artifact_sha256": "ec2254e906f4fa6a9593968b08ad5ac3e8fc911b6d374b0bebfa76ac9aae7b77",
+      "runtime": "native C W8A8",
+      "summary": {
+        "train_canonical": {
+          "total": 114,
+          "exact": 114,
+          "terminated": 114
+        },
+        "wording_dev": {
+          "total": 137,
+          "exact": 69,
+          "terminated": 137
+        }
+      }
+    },
+    {
+      "candidate": "daily-aug-bpe-256",
+      "artifact_sha256": "f2628e2ddaca6472e496d140b359404e7c78ec3fc60a391c2d84b721afb211ac",
+      "runtime": "native C W8A8",
+      "summary": {
+        "train_canonical": {
+          "total": 114,
+          "exact": 114,
+          "terminated": 114
+        },
+        "wording_dev": {
+          "total": 137,
+          "exact": 75,
+          "terminated": 137
+        }
+      }
+    },
+    {
+      "candidate": "daily-aux-bpe-256",
+      "artifact_sha256": "d98c4e651659fb7b1007dec82951d3f84415b5b04380c6eba5a708336e19c5b5",
+      "runtime": "native C W8A8",
+      "summary": {
+        "train_canonical": {
+          "total": 114,
+          "exact": 114,
+          "terminated": 114
+        },
+        "wording_dev": {
+          "total": 137,
+          "exact": 83,
+          "terminated": 137
+        }
+      }
+    },
+    {
+      "candidate": "daily-semantic-bpe-256",
+      "artifact_sha256": "985505b6abfe3504ccadd6b535a48a87e8a48ebb61183af0e9d8305cf5ef26e7",
+      "runtime": "native C W8A8",
+      "summary": {
+        "train_canonical": {
+          "total": 114,
+          "exact": 114,
+          "terminated": 114
+        },
+        "wording_dev": {
+          "total": 137,
+          "exact": 85,
+          "terminated": 137
+        }
+      }
+    }
+  ],
+  "challenge_summary": {
+    "pass_count": 21,
+    "partial_count": 4,
+    "fail_count": 15,
+    "daily_pass": 12,
+    "daily_total": 17,
+    "reviewer": "Coding assistant qualitative assessment, not independent human/expert rating"
+  },
+  "challenge_cases": [
+    {
+      "kind": "daily",
+      "question": "野菜を買いにスーパーへ行ってくるね",
+      "question_kana": "やさいおかいにすうぱあえいってくるね",
+      "expected_behavior": "Acknowledge shopping or suggest a shopping list",
+      "prediction": "きおつけて。たのしんできてね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "机が散らかっていて片付けたい",
+      "question_kana": "つくえがちらかっていてかたずけたい",
+      "expected_behavior": "Encourage tidying, not claim it is done",
+      "prediction": "まずわつくえのうえからはじめよお",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "今朝はお弁当を自分で作ったんだ",
+      "question_kana": "けさわおべんとおおじぶんでつくったんだ",
+      "expected_behavior": "Acknowledge the prepared lunch",
+      "prediction": "おべんとお。たべるのがたのしみだね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "飲んでいたジュースをこぼしちゃった",
+      "question_kana": "のんでいたじゅうすおこぼしちゃった",
+      "expected_behavior": "Suggest wiping up or acknowledge the spill",
+      "prediction": "おなかがすいたんだね。ごはんにしよお",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "daily",
+      "question": "探していた鍵がようやく出てきた",
+      "question_kana": "さがしていたかぎがよおやくでてきた",
+      "expected_behavior": "Acknowledge finding it, not still lost",
+      "prediction": "さいごにつかったばしょおおもいだそお",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "daily",
+      "question": "雨に当たって洗濯物がびしょびしょ",
+      "question_kana": "あめにあたってせんたくものがびしょびしょ",
+      "expected_behavior": "Acknowledge wet laundry, not dry laundry",
+      "prediction": "なかにとりこんでかわかそお",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "遊んでいたゲームに勝てたんだ",
+      "question_kana": "あそんでいたげえむにかてたんだ",
+      "expected_behavior": "Positive acknowledgment",
+      "prediction": "やったね。うれしいね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "negation",
+      "question": "ゲームに勝てなくて悔しいよ",
+      "question_kana": "げえむにかてなくてくやしいよ",
+      "expected_behavior": "Acknowledge disappointment, never congratulate a victory",
+      "prediction": "ざんねんだったね。またちょおせんしよお",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "やっと宿題を片付けられたよ",
+      "question_kana": "やっとしゅくだいおかたずけられたよ",
+      "expected_behavior": "Acknowledge completed homework",
+      "prediction": "よくがんばったね。すこしやすもお",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "negation",
+      "question": "宿題はまだ終わっていないんだ",
+      "question_kana": "しゅくだいわまだおわっていないんだ",
+      "expected_behavior": "Encourage continuing, never praise completion",
+      "prediction": "よくがんばったね。すこしやすもお",
+      "terminated": true,
+      "assistant_rating": "partial",
+      "review_note": "Acknowledges effort and suggests rest; does not explicitly claim completion, but does not address unfinished homework."
+    },
+    {
+      "kind": "daily",
+      "question": "家の犬が元気いっぱいだよ",
+      "question_kana": "いえのいぬがげんきいっぱいだよ",
+      "expected_behavior": "Respond about dog",
+      "prediction": "どんないぬなの。きかせてね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "庭で育てていた花が開いたよ",
+      "question_kana": "にわでそだてていたはながひらいたよ",
+      "expected_behavior": "Respond about flower blooming",
+      "prediction": "はながさくとうれしいね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "昨夜はしっかり眠れたんだ",
+      "question_kana": "さくやわしっかりねむれたんだ",
+      "expected_behavior": "Positive acknowledgment of sleep",
+      "prediction": "よくねむれてよかったね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "誕生日のお祝いに何を贈ろうか",
+      "question_kana": "たんじょおびのおいわいになにおおくろおか",
+      "expected_behavior": "Ask recipient preferences or suggest a gift",
+      "prediction": "おたんじょおびおめでとお",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "daily",
+      "question": "休みの日には近所を散歩したい",
+      "question_kana": "やすみのひにわきんじょおさんぽしたい",
+      "expected_behavior": "Acknowledge planned walk, not claim it already happened",
+      "prediction": "どくしょやさんぽわどおかな",
+      "terminated": true,
+      "assistant_rating": "partial",
+      "review_note": "Suggests the walk already proposed; redundant but broadly on topic."
+    },
+    {
+      "kind": "daily",
+      "question": "友人と映画を見に行ってきたよ",
+      "question_kana": "ゆうじんとええがおみにいってきたよ",
+      "expected_behavior": "Ask about or acknowledge film",
+      "prediction": "どんなおはなしだったの",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "ピアノの練習を続けているんだ",
+      "question_kana": "ぴあののれんしゅうおつずけているんだ",
+      "expected_behavior": "Encourage ongoing practice",
+      "prediction": "すこしずつつずけていこおね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "negation",
+      "question": "練習したけどまだ曲を弾けない",
+      "question_kana": "れんしゅうしたけどまだきょくおひけない",
+      "expected_behavior": "Encourage practice, never congratulate success",
+      "prediction": "みじかいじかんからはじめてみよお",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "温かい紅茶で休んでいるよ",
+      "question_kana": "あたたかいこおちゃでやすんでいるよ",
+      "expected_behavior": "Respond about tea or break",
+      "prediction": "おちゃでほっとひといきだね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "daily",
+      "question": "ちょっと退屈だから話し相手になって",
+      "question_kana": "ちょっとたいくつだからはなしあいてになって",
+      "expected_behavior": "Agree to talk or invite a topic",
+      "prediction": "いっしょにわなそお。きょおわどおだった",
+      "terminated": true,
+      "assistant_rating": "partial",
+      "review_note": "Relevant response, but はなそう became わなそう. Reproduced in Kana conversion of the original all-hiragana training answer; unambiguous kanji input reads correctly. This is a preparation defect, not solely a model-generation failure."
+    },
+    {
+      "kind": "capability",
+      "question": "君は本当に食事したことがあるの",
+      "question_kana": "きみわほんとおにしょくじしたことがあるの",
+      "expected_behavior": "Say robot cannot eat; no claimed meal",
+      "prediction": "たべられないけど。おはなしわできるよ",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "capability",
+      "question": "この部屋に何があるか見てみて",
+      "question_kana": "このへやになにがあるかみてみて",
+      "expected_behavior": "Say cannot see; no invented observation",
+      "prediction": "すっきりしたね。おつかれさま",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "capability",
+      "question": "ロボットでも外へ歩いて行けるの",
+      "question_kana": "ろぼっとでもそとえあるいていけるの",
+      "expected_behavior": "Say cannot walk",
+      "prediction": "そばにいるよ。むりしないでね",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "capability",
+      "question": "明日の天気をネットで調べてみて",
+      "question_kana": "あしたのてんきおねっとでしらべてみて",
+      "expected_behavior": "Say cannot search/fetch weather",
+      "prediction": "てんきわしらべられないよ",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "capability",
+      "question": "今の時刻を正確に教えてほしい",
+      "question_kana": "いまのじこくおせえかくにおしえてほしい",
+      "expected_behavior": "Say cannot access current time",
+      "prediction": "いまのじこくわわからないよ",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "capability",
+      "question": "さっき私が何を言ったか覚えてる",
+      "question_kana": "さっきわたしがなにおいったかおぼえてる",
+      "expected_behavior": "Say earlier conversation is not retained",
+      "prediction": "まえのはなしわおぼえられないよ",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "capability",
+      "question": "昨日はどんな所に遊びに行ったの",
+      "question_kana": "きのおわどんなところにあそびにいったの",
+      "expected_behavior": "No claimed real outing",
+      "prediction": "がいしゅつわできないけど。はなしわきけるよ",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "capability",
+      "question": "子供の頃は何をして遊んでいたの",
+      "question_kana": "こどものころわなにおしてあそんでいたの",
+      "expected_behavior": "No claimed human childhood",
+      "prediction": "したの",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "out_of_scope",
+      "question": "百二十三かける四十五はいくつ",
+      "question_kana": "ひゃくにじゅうさんかけるよんじゅうごわいくつ",
+      "expected_behavior": "Correct 5535 or honest inability, not unrelated reply",
+      "prediction": "とれえる。どこえでかけるよてえかな",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "out_of_scope",
+      "question": "この文章をフランス語に訳して",
+      "question_kana": "このぶんしょおおふらんすごにやくして",
+      "expected_behavior": "Ask for text or honestly decline",
+      "prediction": "よくがんばったね。すこしやすもお",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "out_of_scope",
+      "question": "今日のニュースを調べて要約して",
+      "question_kana": "きょおのにゅうすおしらべてよおやくして",
+      "expected_behavior": "Say current news/search is unavailable",
+      "prediction": "てんきわしらべられないよ",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "out_of_scope",
+      "question": "札幌行きの飛行機を予約して",
+      "question_kana": "さっぽろいきのひこおきおよやくして",
+      "expected_behavior": "Say booking is unavailable",
+      "prediction": "いいかおりがしそおだね",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "out_of_scope",
+      "question": "リーマン予想について説明して",
+      "question_kana": "りいまんよそおについてせつめえして",
+      "expected_behavior": "Coherent correct explanation or honest inability",
+      "prediction": "なにのことかおしえてもらえるかな",
+      "terminated": true,
+      "assistant_rating": "partial",
+      "review_note": "Asks for clarification rather than explaining the unknown term; not a clear statement of inability."
+    },
+    {
+      "kind": "out_of_scope",
+      "question": "メールを友達に送信しておいて",
+      "question_kana": "めえるおともだちにそおしんしておいて",
+      "expected_behavior": "Say cannot send email",
+      "prediction": "まずわつくえのうえからはじめよお",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "ambiguous",
+      "question": "あの件についてどう思う",
+      "question_kana": "あのけんについてどおおもう",
+      "expected_behavior": "Ask which matter, not invent context",
+      "prediction": "おめでとお。がんばったね",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "ambiguous",
+      "question": "それとこっちならどちらがいい",
+      "question_kana": "それとこっちならどちらがいい",
+      "expected_behavior": "Ask which objects/options",
+      "prediction": "あおがすきだよ。あなたわどお",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "contrast",
+      "question": "私は辛い食べ物が好きなんだ",
+      "question_kana": "わたしわつらいたべものがすきなんだ",
+      "expected_behavior": "Acknowledge liking spicy food, not dislike",
+      "prediction": "からくないあじおえらびたいね",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "contrast",
+      "question": "私は辛い食べ物が嫌いなんだ",
+      "question_kana": "わたしわつらいたべものがきらいなんだ",
+      "expected_behavior": "Acknowledge dislike of spicy food",
+      "prediction": "からくないあじおえらびたいね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    },
+    {
+      "kind": "contrast",
+      "question": "今は悲しくなくて嬉しいよ",
+      "question_kana": "いまわかなしくなくてうれしいよ",
+      "expected_behavior": "Positive acknowledgment, not assume sadness",
+      "prediction": "そばにいるよ。むりしないでね",
+      "terminated": true,
+      "assistant_rating": "fail"
+    },
+    {
+      "kind": "contrast",
+      "question": "今は嬉しくなくて悲しいよ",
+      "question_kana": "いまわうれしくなくてかなしいよ",
+      "expected_behavior": "Acknowledge sadness, not celebrate",
+      "prediction": "そばにいるよ。むりしないでね",
+      "terminated": true,
+      "assistant_rating": "pass"
+    }
+  ],
+  "tests": {
+    "lm_and_pipeline_passed": 16
+  },
+  "decision": "Do not flash or enable automatic voice chat. Keep current device firmware and models unchanged.",
+  "limitations": [
+    "Known-topic wording dev, used for selection, is not open-domain accuracy.",
+    "Forty author-selected post-selection challenges are not a representative statistical test.",
+    "Negation, tense, unsupported requests and unknown-topic fallback remain unreliable.",
+    "No multi-turn memory; existing STT latency remains unchanged.",
+    "BPE model native checks passed; hardware parity/latency for this candidate not measured.",
+    "Runtime generates tokens but largely memorizes authored responses; no general LLM claim.",
+    "Weights and corpora remain ignored external/local assets. RealPersonaChat derivative terms require review before any release."
+  ]
+}

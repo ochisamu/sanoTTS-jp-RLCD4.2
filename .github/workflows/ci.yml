@@ -35,3 +35,16 @@ jobs:
 
       - name: Run host tests
         run: python -m unittest discover -s tests -v
+
+      - name: Audit offline voice source publication
+        working-directory: experiments/offline-voice
+        run: python tools/publication_check.py
+
+      - name: Check offline voice renderer and DSP
+        working-directory: experiments/offline-voice
+        run: |
+          python tools/prepare_font.py --download
+          python -m unittest discover -s tests -p test_voice_ui.py -v
+          python -m unittest discover -s tests -p test_dsp.py -v
+          cc -Wall -Wextra -Werror -Iruntime tests/voice_buttons_test.c -o .cache/voice-buttons-test
+          .cache/voice-buttons-test

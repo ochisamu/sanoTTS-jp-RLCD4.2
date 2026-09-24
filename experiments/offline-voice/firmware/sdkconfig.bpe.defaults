@@ -1,0 +1,5 @@
+# Apply after sdkconfig.defaults for the 16 MiB RLCD dialogue build.
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions-bpe.csv"
+CONFIG_PARTITION_TABLE_FILENAME="partitions-bpe.csv"
+CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+CONFIG_SPIRAM_ALLOW_STACK_EXTERNAL_MEMORY=y
